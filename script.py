@@ -1,6 +1,3 @@
-
-
-
 from robodk import robolink, robomath
 RDK = robolink.Robolink()
 
@@ -45,7 +42,7 @@ for k in range(1, 4):
     robot.setDO('1', 1)
     robot.Pause(200) #milisecond
     robot.MoveL(approach_pick)
-    robot.MoveJ(place)
+    robot.MoveJ(RDK.Item('place'))
     robot.setDO('1', 0) #suction off
     robot.setDO('2', 1) #air pressure on
     robot.Pause(200)
@@ -65,6 +62,3 @@ print('Items in the station:')
 itemlist = RDK.ItemList()
 print(itemlist)
 '''
-
-
-
